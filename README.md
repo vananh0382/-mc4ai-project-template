@@ -15,9 +15,9 @@ Phạm Nguyễn Minh Khuê|10CT2|minhkhue2d@gmail.com
 
 Chức năng|Người thực hiện|Ngày hoàn thành dự kiến
 -|-|-
-Danh sách học sinh|Hàng Tuấn Bảo|30/04/23
-Phân tích số lượng học sinh|Phạm Nguyễn Minh Khuê|30/04/23
-Phân tích điểm thi|Đỗ Vân Anh|30/04/23
-Clustering|Đỗ Gia Hưng|30/04/23
-Regression|Đỗ Vân Anh|30/04/23
-Classify|Hàng Tuấn Bảo|30/04/23
+Danh sách học sinh|Hàng Tuấn Bảo|06/05/23
+Phân tích số lượng học sinh|Phạm Nguyễn Minh Khuê|06/05/23
+Phân tích điểm thi|Đỗ Vân Anh|06/05/23
+Clustering|Đỗ Gia Hưng|06/05/23
+Regression|Đỗ Vân Anh|06/05/23
+Classify|Hàng Tuấn Bảo|06/05/23
