@@ -4,6 +4,12 @@ import numpy as np
 import plotly.express as px
 df = pd.read_csv("py4ai-score.csv", low_memory=False)
 
+
+df['BONUS'].fillna(0, inplace = True)
+for i in range(1, 11):
+  df[f"S{i}"].fillna(0, inplace = True)
+df['REG-MC4AI'].fillna("N", inplace = True)
+
 X = df[['S6', 'S10', 'GPA']].to_numpy()
 kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
 print(kmeans.labels_)
