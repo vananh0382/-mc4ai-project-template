@@ -11,8 +11,10 @@ for i in range(1, 11):
   df[f"S{i}"].fillna(0, inplace = True)
 df['REG-MC4AI'].fillna("N", inplace = True)
 
+num= st.select_slider('Số nhóm', options=[1,2,3,4,5])
+
 X = df[['S6', 'S10', 'GPA']].to_numpy()
-kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
+kmeans = KMeans(n_clusters=num, random_state=0).fit(X)
 print(kmeans.labels_)
 x = df['S6'].values
 y = df['S10'].values
