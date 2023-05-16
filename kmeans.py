@@ -18,7 +18,7 @@ y = df['S10'].values
 z = df['GPA'].values
 
 fig = px.scatter_3d(x=x, y=y, z=z, color=kmeans.labels_)
-fig.show()
+st.plotly_chart(fig, use_container_width=False)
 
 print(df[kmeans.labels_==0])
 print(df[kmeans.labels_==1])
