@@ -33,3 +33,5 @@ def mhpf():
   plt.ylabel('S6')
   plt.show()
   st.pyplot(fig)
+
+mhpf()
