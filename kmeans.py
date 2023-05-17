@@ -5,7 +5,7 @@ import plotly.express as px
 import streamlit as st
 
 def kmeans():
-
+  df = pd.read_csv("py4ai-score.csv", low_memory=False)
 
   num= st.select_slider('Số nhóm', options=[1,2,3,4,5])
 
