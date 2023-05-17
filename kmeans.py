@@ -23,5 +23,7 @@ z = df['GPA'].values
 fig = px.scatter_3d(x=x, y=y, z=z, color=kmeans.labels_)
 st.plotly_chart(fig, use_container_width=False)
 for i in range(num):
-  st.write(df[kmeans.labels_==i].drop(columns=['GENDER','CLASS','PYTHON-CLASS','S1','S2','S3','S4','S5','S6','S7','S8','S9','S10','BONUS','REG-MC4AI']))
+  dfi=df[kmeans.labels_==i]
+  st.write('Nhóm' ,i, 'GPA cao nhất là',dfi['GPA'].values.max(),'thấp nhất là',dfi['GPA'].values.min(),' trung bình',dfi['GPA'].values.sum())
+  st.write(dfi.drop(columns=['GENDER','CLASS','PYTHON-CLASS','S1','S2','S3','S4','S5','S6','S7','S8','S9','S10','BONUS','REG-MC4AI']))
 
