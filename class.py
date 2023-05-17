@@ -32,6 +32,6 @@ def mhpf():
   plt.xlabel('S-AVG')
   plt.ylabel('S6')
   plt.show()
-  st.pyplot(fig)
+  st.pyplot(fig=None)
 
 mhpf()
