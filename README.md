@@ -9,7 +9,7 @@ Phạm Nguyễn Minh Khuê|10CT2|minhkhue2d@gmail.com
 Phùng Quỳnh Anh|10CT2|phungquynhanh0488@gmail.com 
 
 # Thông tin project
-## Đề tài: Phân tích điểm thi lớp Python4AI 092022 và Phân tích khảo sát nghề nghiệp của lớp AI4ALL
+## Đề tài: Phân tích điểm thi lớp Python4AI 092022
 ## Các thư viện sử dụng: `numpy, matplotlib, scikit-learn, plotly`
 
 ## Các chức năng chính & kế hoạch thực hiện
