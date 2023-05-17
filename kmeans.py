@@ -22,7 +22,6 @@ z = df['GPA'].values
 
 fig = px.scatter_3d(x=x, y=y, z=z, color=kmeans.labels_)
 st.plotly_chart(fig, use_container_width=False)
+for i in range(num):
+  st.write(df[kmeans.labels_==i])
 
-print(df[kmeans.labels_==0])
-print(df[kmeans.labels_==1])
-print(df[kmeans.labels_==2])
