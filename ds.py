@@ -20,6 +20,8 @@ with col1:
         dfg = df[df['GENDER']=='F']
     elif male and fem: 
         dfg = df
+    else:
+        dfg = df
 
 with col2: 
     khoi = st.radio('Khối lớp', ('Tất cả', 'Lớp 10', 'Lớp 11', "Lớp 12"), horizontal=True)
