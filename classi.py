@@ -30,6 +30,8 @@ def classi():
        y.append(0)
    y = np.array(y)
 
+
+
   model = LogisticRegression()
   model.fit(X, y)
   weights = model.coef_[0]
