@@ -5,9 +5,9 @@ import numpy as np
 import plotly.express as px
 import streamlit as st
 
-from class import class
-from graph import graph
-from kmeans import kmeans
+import class
+import graph
+import kmeans
 
 df = pd.read_csv("score.csv", low_memory=False)
 st.title('BẢNG ĐIỂM LỚP PY4AI 09/2022')
