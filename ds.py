@@ -12,9 +12,11 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     gender = st.write('Giới tính')
-    if st.checkbox('Nam'):
+    male = st.checkbox('Nam')
+    fem = st.checkbox('Nữ')
+    if male:
         dfg = df[df['GENDER']=='M']
-    elif st.checkbox('Nữ'):
+    elif fem:
         dfg = df[df['GENDER']=='F']
     else: dfg = df
 
