@@ -79,18 +79,20 @@ with col4:
     elif times == ['Chiều']:
      dft = dfai[dfai['PYTHON-CLASS'].str.endswith('C')]
     else: dft = dfai
-     
+dfr = pd.DataFrame({})   
 lc = st.write('Lớp chuyên')
 cola, colb, colc, cold, cole = st.columns(5)
 with cola:
     math = st.checkbox('Toán')
     lit = st.checkbox('Văn')
-    if math and lit:
-     dftv = dft[dft['CLASS-GROUP'].isin(['Chuyên Toán','Chuyên Văn'])]  
-    elif math:
-     dftv = dft[dft['CLASS-GROUP'].isin(['Chuyên Toán'])]
-    elif math:
-     dftv = dft[dft['CLASS-GROUP'].isin(['Chuyên Văn'])]  
+   
+    if math:
+     dfto = dft[dft['CLASS-GROUP'].isin(['Chuyên Toán'])]
+    else: dfto = pd.DataFrame({})
+    if lit:
+     dfv = dft[dft['CLASS-GROUP'].isin(['Chuyên Văn'])]
+    else: dfv = pd.DataFrame({})
+    
 with colb:
     ly = st.checkbox('Lý')
     hoa = st.checkbox('Hóa')
@@ -111,4 +113,6 @@ with cold:
 with cole:
     th_sn = st.checkbox('TH/SN')
     diff = st.checkbox('Khác')
-
+   
+for i in dfto.index:
+     dfr.loc[i] = list(dfto.loc[i])
