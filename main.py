@@ -4,8 +4,7 @@ import pandas as pd
 import numpy as np 
 import plotly.express as px
 import streamlit as st
-
-import class
+import classi
 import graph
 import kmeans
 
