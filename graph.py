@@ -2,16 +2,24 @@ import streamlit as st
 import re
 import pandas as pd
 import plotly.express as px
-df = pd.read_csv("py4ai-score.csv", low_memory=False)
 
+df = pd.read_csv("score.csv", low_memory=False)
 
 def graph():
     def sohs():
         def xulyfile():
-            df['BONUS'].fillna(0, inplace = True)
-            for i in range(1, 11):
-             df[f"S{i}"].fillna(0, inplace = True)
-            df['REG-MC4AI'].fillna("N", inplace = True)
+            df['S1'].fillna(0, inplace=True)
+            df['S2'].fillna(0, inplace=True)
+            df['S3'].fillna(0, inplace=True)
+            df['S4'].fillna(0, inplace=True)
+            df['S5'].fillna(0, inplace=True)
+            df['S6'].fillna(0, inplace=True)
+            df['S7'].fillna(0, inplace=True)
+            df['S8'].fillna(0, inplace=True)
+            df['S9'].fillna(0, inplace=True)
+            df['S10'].fillna(0, inplace=True)
+            df['BONUS'].fillna(0, inplace=True)
+            df['REG-MC4AI'].fillna('N', inplace=True)
         xulyfile()
 
         st.write('BIỂU ĐỒ MÔ TẢ SỐ LƯỢNG HỌC SINH NAM VÀ NỮ')
@@ -130,13 +138,13 @@ def graph():
         p = st.radio('Điểm từng session', ('S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'GPA'), horizontal=st.session_state.horizontal)
         if p == 'S1':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S1'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Nhìn chung, các bạn nữ đạt điểm cao hơn các bạn nam.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S1'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các lớp học có điểm số tương đối đều, riêng lớp 114 buổi Chiều có nhiều học sinh 0 điểm nhất.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S1'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp chuyên Hóa đạt điểm cao nhất, học sinh lớp chuyên Anh đạt điểm thấp nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S1'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh ở ba khối có điểm số đều nhau.')
             def dtbs1():
                 a = 0
                 A = 0
@@ -180,16 +188,16 @@ def graph():
                 df['ĐTB S1'] = df['CLASS & GENDER'].map(dtbs1)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S1'))
             dtbs1()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở các lớp thường, kém nhất là ở lớp chuyên Trung Nhật. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Sử Địa.')
         elif p == 'S2':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S2'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nữ đạt điểm cao hơn.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S2'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh ở lớp 114 buổi sáng và chiều đạt điểm cao hơn.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S2'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp chuyên Văn đạt điểm cao nhất, học sinh lớp chuyên Anh có nhiều bạn 0 điểm nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S2'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh ở ba khối có điểm số đều nhau.')
             def dtbs2():
                 a = 0
                 A = 0
@@ -233,16 +241,16 @@ def graph():
                 df['ĐTB S2'] = df['CLASS & GENDER'].map(dtbs2)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S2'))
             dtbs2()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở các lớp thường, kém nhất là ở lớp chuyên Trung Nhật. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'S3': 
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S3'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nữ đạt điểm cao hơn.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S3'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp 114 buổi sáng đạt điểm cao nhất.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S3'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh ở các lớp chuyên Toán, chuyên Sử Địa, chuyên Hóa đạt điểm cao nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S3'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh khối 10 đạt điểm cao hơn.')
             def dtbs3():
                 a = 0
                 A = 0
@@ -286,16 +294,16 @@ def graph():
                 df['ĐTB S3'] = df['CLASS & GENDER'].map(dtbs3)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S3'))
             dtbs3()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở các lớp thường, kém nhất là lớp chuyên Trung Nhật. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'S4':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S4'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam đạt điểm cao hơn.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S4'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp 115 buổi chiều đạt điểm cao nhất và kém nhất là học sinh lớp 115 buổi sáng.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S4'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp chuyên Văn đạt điểm cao nhất và kém nhất là học sinh lớp chuyên Trung Nhật.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S4'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh khối 11 và 12 đạt điểm cao hơn học sinh khối 10.')
             def dtbs4():
                 a = 0
                 A = 0
@@ -339,16 +347,16 @@ def graph():
                 df['ĐTB S4'] = df['CLASS & GENDER'].map(dtbs4)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S4'))
             dtbs4()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở các lớp thường, kém nhất là lớp chuyên Trung Nhật. Các bạn nữ ở các lớp chuyên Lý đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'S5':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S5'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nữ đạt điểm cao hơn.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S5'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp 114 buổi sáng đạt điểm cao nhất.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S5'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp chuyên Tin đạt điểm cao nhất và kém nhất là học sinh lớp chuyên Trung Nhật.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S5'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh khối 11, 12 đạt điểm cao hơn học sinh khối 10.')
             def dtbs5():
                 a = 0
                 A = 0
@@ -392,16 +400,16 @@ def graph():
                 df['ĐTB S5'] = df['CLASS & GENDER'].map(dtbs5)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S5'))
             dtbs5()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở các lớp thường, kém nhất là lớp chuyên Trung Nhật. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'S6':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S6'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam đạt điểm cao hơn.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S6'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp 115 buổi chiều đạt điểm cao nhất.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S6'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh lớp chuyên Lý đạt điểm cao nhất và thấp nhất là học sinh lớp Tích hợp/Song ngữ.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S6'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Học sinh khối 11, 12 đạt điểm cao hơn.')
             def dtbs6():
                 a = 0
                 A = 0
@@ -445,16 +453,16 @@ def graph():
                 df['ĐTB S6'] = df['CLASS & GENDER'].map(dtbs6)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S6'))
             dtbs6()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở lớp chuyên Lý, kém nhất là lớp chuyên Trung Nhật. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'S7':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S7'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam đạt điểm 9 nhiều hơn các bạn nữ')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S7'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp ở phòng 114 đạt điểm cao hơn các bạn ở phòng 115, lớp buổi sáng đạt điểm cao hơn lớp buổi chiều.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S7'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp chuyên Tin đạt điểm cao nhất. Lớp tích hợp/song ngữ, chuyên Sử Địa, chuyên Văn đạt điểm thấp nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S7'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Khối 11, 12 đạt điểm cao hơn khối 10.')
             def dtbs7():
                 a = 0
                 A = 0
@@ -498,16 +506,16 @@ def graph():
                 df['ĐTB S7'] = df['CLASS & GENDER'].map(dtbs7)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S7'))
             dtbs7()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở lớp chuyên Lý, kém nhất là lớp chuyên Trung Nhật. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'S8':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S8'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam có số điểm nhỉnh hơn các bạn nữ.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S8'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp 114-S và 115-C có điểm cao hơn 2 lớp còn lại.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S8'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp chuyên Văn đạt điểm cao nhất. Lớp Tích hợp/Song ngữ, chuyên Anh, chuyên Trung Nhật đạt điểm thấp nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S8'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp 11,12 và 10 đạt mức điểm tương đương nhau.')
             def dtbs8():
                 a = 0
                 A = 0
@@ -551,16 +559,16 @@ def graph():
                 df['ĐTB S8'] = df['CLASS & GENDER'].map(dtbs8)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S8'))
             dtbs8()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở lớp chuyên Lý, kém nhất là các lớp thường. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'S9':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S9'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam đạt điểm cao hơn các bạn nữ.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S9'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các lớp buổi chiều đạt điểm cao hơn các lớp buổi sáng.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S9'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp chuyên Trung Nhật, Tích hợp/Song ngữ đạt điểm thấp nhất. Lớp chuyên Tin, chuyên Lý đạt điểm cao nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S9'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Khối 10 đạt điểm cao hơn khối 11,12.')
             def dtbs9():
                 a = 0
                 A = 0
@@ -604,16 +612,16 @@ def graph():
                 df['ĐTB S9'] = df['CLASS & GENDER'].map(dtbs9)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S9'))
             dtbs9()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở lớp chuyên Lý, kém nhất là lớp chuyên Sử Địa. Các bạn nữ ở các lớp chuyên Tin đạt điểm cao nhất và kém nhất là ở các lớp thường.')
         elif p == 'S10':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'S10'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam đạt điểm cao hơn các bạn nữ.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'S10'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp 114-S đạt điểm cao nhất. Lớp 115-C đạt điểm thấp nhất.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'S10'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp chuyên Tin đạt điểm cao nhất. Lớp Tích hợp/Song ngữ và chuyên Sử Địa đạt điểm thấp nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'S10'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: Khối 11,12 đạt điểm nhỉnh hơn khối 10.')
             def dtbs10():
                 a = 0
                 A = 0
@@ -657,16 +665,16 @@ def graph():
                 df['ĐTB S10'] = df['CLASS & GENDER'].map(dtbs10)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB S10'))
             dtbs10()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Các bạn nam lớp chuyên Toán đạt điểm cao nhất, tiếp đến là các bạn nam ở lớp chuyên Tin, kém nhất là lớp chuyên Trung Nhật. Các bạn nữ ở các lớp thường đạt điểm cao nhất và kém nhất là ở lớp chuyên Trung Nhật.')
         elif p == 'GPA':
             st.plotly_chart(px.box(df, x = 'GENDER', y = 'GPA'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: GPA của nam cao hơn nữ.')
             st.plotly_chart(px.box(df, x = 'PYTHON-CLASS', y = 'GPA'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: GPA của lớp 114-S cao nhất, lớp 115-S là thấp nhất.')
             st.plotly_chart(px.box(df, x = 'CLASS_GROUP', y = 'GPA'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: GPA của lớp chuyên Tin cao nhất, lớp Tích hợp/Song ngữ thấp nhất.')
             st.plotly_chart(px.box(df, x = 'KHỐI', y = 'GPA'))
-            st.write('Kết luận: ')
+            st.write('Kết luận: GPA khối 11, 12 tốt hơn khối 10.')
             def dtbgpa():
                 a = 0
                 A = 0
@@ -710,5 +718,6 @@ def graph():
                 df['ĐTB GPA'] = df['CLASS & GENDER'].map(dtbgpa)
                 return st.plotly_chart(px.histogram(df, x = 'CLASS_GROUP', color = 'GENDER', barmode = 'group', y = 'ĐTB GPA'))
             dtbgpa()
-            st.write('Kết luận: ')
+            st.write('Kết luận: Lớp chuyên Trung Nhật và Tích hợp/Song ngữ học kém nhất.')
 graph()
+
