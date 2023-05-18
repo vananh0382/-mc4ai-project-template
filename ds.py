@@ -13,26 +13,38 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     gender = st.write('Giới tính')
     if st.checkbox('Nam'):
-        male = df[df['GENDER']=='M'].value_counts()
-        st.write(male)
+        dfg = df[df['GENDER']=='M']
     if st.checkbox('Nữ'):
-        female = df[df['GENDER']=='F'].value_counts()
-        st.write(female)
+        dfg = df[df['GENDER']=='F']
 
 with col2: 
     khoi = st.radio('Khối lớp', ('Tất cả', 'Lớp 10', 'Lớp 11', "Lớp 12"), horizontal=True)
-
+    if khoi == 'Lớp 10':
+     dfk = dfg[dfg['CLASS'].str.startswith('10')]
+    elif khoi == 'Lớp 11':
+     dfk = dfg[dfg['CLASS'].str.startswith('11')]
+    elif khoi == 'Lớp 12':
+     dfk = dfg[dfg['CLASS'].str.startswith('12')]
 with col3: 
     AI_class = st.selectbox('Phòng', ('Tất cả','A114', 'A115'))
-
+    if AI_class == 'A114':
+     dfai = dfk[dfk['PYTHON-CLASS'].str.startswith('114')]
+    elif AI_class == 'A115':
+     dfai = dfk[dfk['PYTHON-CLASS'].str.startswith('115')]
 with col4: 
     times = st.multiselect('Buổi', ['Sáng','Chiều'])
- 
+    if times == 'Sáng':
+     dft = dfai[dfai['PYTHON-CLASS'].str.endswith('S')] 
+    elif times == 'Chiều':
+     dft = dfai[dfai['PYTHON-CLASS'].str.endswith('C')] 
+     
 lc = st.write('Lớp chuyên')
 cola, colb, colc, cold, cole = st.columns(5)
 with cola:
     math = st.checkbox('Toán')
     literature = st.checkbox('Văn')
+    
+    
 with colb:
     ly = st.checkbox('Lý')
     hoa = st.checkbox('Hóa')
