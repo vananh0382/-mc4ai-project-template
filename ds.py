@@ -14,8 +14,9 @@ with col1:
     gender = st.write('Giới tính')
     if st.checkbox('Nam'):
         dfg = df[df['GENDER']=='M']
-    if st.checkbox('Nữ'):
+    elif st.checkbox('Nữ'):
         dfg = df[df['GENDER']=='F']
+     else: dfg = df
 
 with col2: 
     khoi = st.radio('Khối lớp', ('Tất cả', 'Lớp 10', 'Lớp 11', "Lớp 12"), horizontal=True)
