@@ -77,19 +77,29 @@ with col4:
     elif times == ['Chiều']:
      dft = dfai[dfai['PYTHON-CLASS'].str.endswith('C')]
     else: dft = dfai
-st.write(dft)
+     
 lc = st.write('Lớp chuyên')
 cola, colb, colc, cold, cole = st.columns(5)
 with cola:
     math = st.checkbox('Toán')
-    literature = st.checkbox('Văn')
-    
-    
+    lit = st.checkbox('Văn')
+    if math and lit:
+     dftv = dft[dft['CLASS-GROUP'].isin(['Chuyên Toán','Chuyên Văn'])]  
+    elif math:
+     dftv = dft[dft['CLASS-GROUP'].isin(['Chuyên Toán'])]
+    elif math:
+     dftv = dft[dft['CLASS-GROUP'].isin(['Chuyên Văn'])]  
 with colb:
     ly = st.checkbox('Lý')
     hoa = st.checkbox('Hóa')
-    if ly:
-     dflh = 
+    if ly and hoa:
+     dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý','Chuyên Hóa'])]
+    elif ly:
+     dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý'])]
+    elif hoa:
+     dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Hóa'])]  
+     
+st.write(dflh)
 with colc:
     eng = st.checkbox('Anh')
     tin = st.checkbox('Tin')
