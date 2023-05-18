@@ -14,10 +14,10 @@ with col1:
     gender = st.write('Giới tính')
     if st.checkbox('Nam'):
         male = df[df['GENDER']=='M'].value_counts()
-        print(male)
+        st.write(male)
     if st.checkbox('Nữ'):
         female = df[df['GENDER']=='F'].value_counts()
-        print(female)
+        st.write(female)
 
 with col2: 
     khoi = st.radio('Khối lớp', ('Tất cả', 'Lớp 10', 'Lớp 11', "Lớp 12"), horizontal=True)
