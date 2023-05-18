@@ -44,9 +44,9 @@ with col3:
      dfai = dfk
 with col4: 
     times = st.multiselect('Buổi', ['Sáng','Chiều'])
-    if times == 'Sáng':
+    if times == ['Sáng']:
      dft = dfai[dfai['PYTHON-CLASS'].str.endswith('S')] 
-    elif times == 'Chiều':
+    elif times == ['Chiều']:
      dft = dfai[dfai['PYTHON-CLASS'].str.endswith('C')]
     else: dft = dfai
 st.write(dft)
