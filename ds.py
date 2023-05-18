@@ -96,7 +96,8 @@ data = {'NAME' : [],
         'S10': [],
         'BONUS': [],
         'GPA': [],
-        'REG-MC4AI': []}
+        'REG-MC4AI': [],
+        'CLASS-GROUP': []}
 dfr = pd.DataFrame(data)
 lc = st.write('Lớp chuyên')
 cola, colb, colc, cold, cole = st.columns(5)
