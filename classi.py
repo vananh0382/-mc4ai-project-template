@@ -20,7 +20,7 @@ for i in df.index:
   avg.append(r.mean())
 df['S-AVG'] = avg
 def classi():
- def mhpf():
+  def mhpf():
    X = df[['S6','S-AVG']].values.copy()
    y = []
    for i in range(len(df[['NAME']])):
@@ -29,9 +29,6 @@ def classi():
      else:
        y.append(0)
    y = np.array(y)
-
-
-
   model = LogisticRegression()
   model.fit(X, y)
   weights = model.coef_[0]
