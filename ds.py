@@ -11,25 +11,25 @@ df['REG-MC4AI'].fillna("N", inplace = True)
 
 p = row['CLASS'] 
 if re.search('^..CT.$', p):
-    return 'Chuyên Toán'
+   return 'Chuyên Toán'
 elif re.search('^..CV.$', p):
-    return 'Chuyên Văn'
+   return 'Chuyên Văn'
 elif re.search('^..CL.$', p):
-    return 'Chuyên Lý'
+   return 'Chuyên Lý'
 elif re.search('^..CH.$', p):
-    return 'Chuyên Hóa'
+   return 'Chuyên Hóa'
 elif re.search('^..CA.$', p):
-    return 'Chuyên Anh'
+   return 'Chuyên Anh'
 elif re.search('^..CSD$', p):
-    return 'Sử Địa'
+   return 'Sử Địa'
 elif re.search('^..CTIN$', p):
-    return 'Chuyên Tin'
+   return 'Chuyên Tin'
 elif re.search('^..CTRN$', p):
-    return 'Trung Nhật'
+   return 'Trung Nhật'
 elif re.search('^..TH$', p):
-    return 'Tích Hợp/Song Ngữ'
+   return 'Tích Hợp/Song Ngữ'
 elif re.search('^..SN$', p):
-    return 'Tích Hợp/Song Ngữ'
+   return 'Tích Hợp/Song Ngữ'
 else: return 'Khác'
 
 
