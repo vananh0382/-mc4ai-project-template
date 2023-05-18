@@ -37,7 +37,8 @@ with col4:
     if times == 'Sáng':
      dft = dfai[dfai['PYTHON-CLASS'].str.endswith('S')] 
     elif times == 'Chiều':
-     dft = dfai[dfai['PYTHON-CLASS'].str.endswith('C')] 
+     dft = dfai[dfai['PYTHON-CLASS'].str.endswith('C')]
+    else: dft = dfai
 st.write(dft)
 lc = st.write('Lớp chuyên')
 cola, colb, colc, cold, cole = st.columns(5)
