@@ -5,7 +5,7 @@ import numpy as np
 import plotly.express as px
 import streamlit as st
 
-import class
+# import class
 import graph
 import kmeans
 
@@ -16,8 +16,8 @@ tab1, tab2, tab3, tab4 = st.tabs(['Danh sách', 'Biểu đồ', 'Phân nhóm', '
 with tab1:
   
 with tab2:
-  graph()
+  graph.graph()
 with tab3:
   kmeans.kmeans()
 with tab4:
-  class()
+#   class()
