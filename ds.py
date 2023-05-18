@@ -31,6 +31,8 @@ with col2:
      dfk = dfg[dfg['CLASS'].str.startswith('11')]
     elif khoi == 'Lớp 12':
      dfk = dfg[dfg['CLASS'].str.startswith('12')]
+    else: 
+     dfk = dfg
 
 with col3: 
     AI_class = st.selectbox('Phòng', ('Tất cả','A114', 'A115'))
