@@ -115,12 +115,13 @@ with cola:
 with colb:
     ly = st.checkbox('Lý')
     hoa = st.checkbox('Hóa')
-#     if ly and hoa:
-#      dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý','Chuyên Hóa'])]
-#     elif ly:
-#      dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý'])]
-#     elif hoa:
-#      dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Hóa'])]  
+    if ly:
+     dfl = dft[dft['CLASS-GROUP'].isin(['Chuyên Lý'])]
+    else: dfl = pd.DataFrame()
+    if hoa:
+     dfh = dft[dft['CLASS-GROUP'].isin(['Chuyên Hóa'])]
+    else: dfh = pd.DataFrame()
+
      
 # st.write(dflh)
 with colc:
@@ -135,4 +136,6 @@ with cole:
    
 for i in dfto.index:
      dfr.loc[i] = list(dfto.loc[i])
+for i in dfv.index:
+     dfr.loc[i] = list(dfv.loc[i])
 st.write(dfr)
