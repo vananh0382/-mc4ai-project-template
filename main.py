@@ -9,7 +9,7 @@ import streamlit as st
 import graph
 import kmeans
 
-df = pd.read_csv("score.csv", low_memory=False)
+df = pd.read_csv("py4ai-score.csv", low_memory=False)
 st.title('BẢNG ĐIỂM LỚP PY4AI 09/2022')
 
 tab1, tab2, tab3, tab4 = st.tabs(['Danh sách', 'Biểu đồ', 'Phân nhóm', 'Phân loại'])
