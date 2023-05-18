@@ -16,7 +16,7 @@ with col1:
         dfg = df[df['GENDER']=='M']
     elif st.checkbox('Nữ'):
         dfg = df[df['GENDER']=='F']
-     else: dfg = df
+    else: dfg = df
 
 with col2: 
     khoi = st.radio('Khối lớp', ('Tất cả', 'Lớp 10', 'Lớp 11', "Lớp 12"), horizontal=True)
