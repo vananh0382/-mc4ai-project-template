@@ -43,7 +43,7 @@ def mhpf():
  plt.ylabel('S6')
  x1 = np.linspace(0, 10, 1000)
  x2 = -(w1*x1+bias)/w2
- st.plot(x1,x2)
+ plt.plot(x1,x2)
  st.pyplot(fig=None)
 
 mhpf()
@@ -72,7 +72,7 @@ def mgpf():
  x1 = np.linspace(0,10,1000)
  x2 = -(w1*x1+bias)/w2
  plt.plot(x1,x2)
- plt.show()
+ st.pyplot(fig=None)
  
 mgpf()
 
@@ -95,7 +95,7 @@ def mhf():
  plt.plot(x, model.predict(x.reshape(-1,1)), c='y')
  plt.xlabel('S-AVG')
  plt.ylabel('S6')
- plt.show()
+ st.pyplot(fig=None)
  
 mhf()
 
@@ -118,7 +118,7 @@ def mgf():
  plt.plot(x, model.predict(x.reshape(-1,1)), c='y')
  plt.xlabel('GPA')
  plt.ylabel('S6')
- plt.show()
+ st.pyplot(fig=None)
  
 mgf()
 
@@ -163,4 +163,4 @@ def 3D():
  fig = go.Figure(data=[go.Surface(x=xbound, y=ybound, z=zbound), 
                       go.Scatter3d(x=df2['S6'], y=df2['S-AVG'], z=df2['GPA'], mode='markers'),
                       go.Scatter3d(x=df3['S6'], y=df3['S-AVG'], z=df3['GPA'], mode='markers')])
- fig.show()
+ st.pyplot(fig)
