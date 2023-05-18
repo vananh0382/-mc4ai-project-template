@@ -94,16 +94,16 @@ with cola:
     else: dfv = pd.DataFrame({})
     
 with colb:
-    ly = st.checkbox('Lý')
-    hoa = st.checkbox('Hóa')
-    if ly and hoa:
-     dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý','Chuyên Hóa'])]
-    elif ly:
-     dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý'])]
-    elif hoa:
-     dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Hóa'])]  
+#     ly = st.checkbox('Lý')
+#     hoa = st.checkbox('Hóa')
+#     if ly and hoa:
+#      dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý','Chuyên Hóa'])]
+#     elif ly:
+#      dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý'])]
+#     elif hoa:
+#      dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Hóa'])]  
      
-st.write(dflh)
+# st.write(dflh)
 with colc:
     eng = st.checkbox('Anh')
     tin = st.checkbox('Tin')
