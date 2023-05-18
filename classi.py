@@ -44,7 +44,8 @@ def classi():
   x2 = -(w1*x1+bias)/w2
   plt.plot(x1,x2)
   st.pyplot(fig=None)
- mhpf()
+  
+mhpf()
 
  def mgpf():
   X = df[['S6','GPA']].values.copy()
