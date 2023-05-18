@@ -45,7 +45,7 @@ def classi():
   plt.plot(x1,x2)
   st.pyplot(fig=None)
   
-mhpf()
+ mhpf()
 
  def mgpf():
   X = df[['S6','GPA']].values.copy()
