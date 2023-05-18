@@ -16,7 +16,7 @@ with col1:
         dfg = df[df['GENDER']=='M']
     if st.checkbox('Nữ'):
         dfg = df[df['GENDER']=='F']
-st.write(dfg)
+
 with col2: 
     khoi = st.radio('Khối lớp', ('Tất cả', 'Lớp 10', 'Lớp 11', "Lớp 12"), horizontal=True)
     if khoi == 'Lớp 10':
@@ -25,7 +25,7 @@ with col2:
      dfk = dfg[dfg['CLASS'].str.startswith('11')]
     elif khoi == 'Lớp 12':
      dfk = dfg[dfg['CLASS'].str.startswith('12')]
-st.write(dfk)
+
 with col3: 
     AI_class = st.selectbox('Phòng', ('Tất cả','A114', 'A115'))
     if AI_class == 'A114':
