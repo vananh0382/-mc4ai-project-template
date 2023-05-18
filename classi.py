@@ -19,7 +19,7 @@ for i in df.index:
   r = df.loc[i][4:13]
   avg.append(r.mean())
 df['S-AVG'] = avg
-def class():
+def classi():
  def mhpf():
    X = df[['S6','S-AVG']].values.copy()
    y = []
