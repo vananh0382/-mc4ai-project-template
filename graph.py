@@ -8,18 +8,10 @@ df = pd.read_csv("score.csv", low_memory=False)
 def graph():
     def sohs():
         def xulyfile():
-            df['S1'].fillna(0, inplace=True)
-            df['S2'].fillna(0, inplace=True)
-            df['S3'].fillna(0, inplace=True)
-            df['S4'].fillna(0, inplace=True)
-            df['S5'].fillna(0, inplace=True)
-            df['S6'].fillna(0, inplace=True)
-            df['S7'].fillna(0, inplace=True)
-            df['S8'].fillna(0, inplace=True)
-            df['S9'].fillna(0, inplace=True)
-            df['S10'].fillna(0, inplace=True)
-            df['BONUS'].fillna(0, inplace=True)
-            df['REG-MC4AI'].fillna('N', inplace=True)
+              df['BONUS'].fillna(0, inplace = True)
+              for i in range(1, 11):
+               df[f"S{i}"].fillna(0, inplace = True)
+              df['REG-MC4AI'].fillna("N", inplace = True)
 
         st.write('BIỂU ĐỒ MÔ TẢ SỐ LƯỢNG HỌC SINH NAM VÀ NỮ')
         st.plotly_chart(px.pie(df, names = 'GENDER'))
