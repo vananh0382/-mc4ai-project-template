@@ -9,8 +9,9 @@ for i in range(1, 11):
  df[f"S{i}"].fillna(0, inplace = True)
 df['REG-MC4AI'].fillna("N", inplace = True)
 
-p = row['CLASS'] 
+
 def class_group(row):
+ p = row['CLASS'] 
  if re.search('^..CT.$', p):
     return 'Chuyên Toán'
  elif re.search('^..CV.$', p):
