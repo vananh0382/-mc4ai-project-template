@@ -7,6 +7,7 @@ import streamlit as st
 import classi
 import graph
 import kmeans
+import ds
 
 df = pd.read_csv("py4ai-score.csv", low_memory=False)
 st.title('BẢNG ĐIỂM LỚP PY4AI 09/2022')
