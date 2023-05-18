@@ -5,7 +5,7 @@ import numpy as np
 import plotly.express as px
 import streamlit as st
 
-# import class
+import class
 import graph
 import kmeans
 
@@ -19,5 +19,5 @@ with tab2:
   graph.graph()
 with tab3:
   kmeans.kmeans()
-# with tab4:
-#   class()
+with tab4:
+  class()
