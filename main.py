@@ -19,4 +19,4 @@ with tab2:
 with tab3:
   kmeans.kmeans()
 with tab4:
-  class.class()
+  classi.classi()
