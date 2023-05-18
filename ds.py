@@ -40,6 +40,8 @@ with col3:
      dfai = dfk[dfk['PYTHON-CLASS'].str.startswith('114')]
     elif AI_class == 'A115':
      dfai = dfk[dfk['PYTHON-CLASS'].str.startswith('115')]
+    else: 
+     dfai = dfk
 with col4: 
     times = st.multiselect('Buổi', ['Sáng','Chiều'])
     if times == 'Sáng':
