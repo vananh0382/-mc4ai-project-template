@@ -20,7 +20,7 @@ for i in df.index:
   avg.append(r.mean())
 df['S-AVG'] = avg
 def classi():
-     def mhpf():
+    def mhpf():
       X = df[['S6','S-AVG']].values.copy()
       y = []
       for i in range(len(df[['NAME']])):
@@ -44,7 +44,7 @@ def classi():
       x2 = -(w1*x1+bias)/w2
       plt.plot(x1,x2)
       st.pyplot(fig=None)
-     mhpf()
+    mhpf()
 
     def mgpf():
      X = df[['S6','GPA']].values.copy()
