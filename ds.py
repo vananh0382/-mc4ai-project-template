@@ -79,7 +79,24 @@ with col4:
     elif times == ['Chiều']:
      dft = dfai[dfai['PYTHON-CLASS'].str.endswith('C')]
     else: dft = dfai
-dfr = pd.DataFrame()  
+data = {'NAME' : [], 
+        'GENDER': [],
+        'CLASS': [],
+        'PYTHON-CLASS': [],
+        'S1': [],
+        'S2': [],
+        'S3': [],
+        'S4': [],
+        'S5': [],
+        'S6': [],
+        'S7': [],
+        'S8': [],
+        'S9': [],
+        'S10': [],
+        'BONUS': [],
+        'GPA': [],
+        'REG-MC4AI': []}
+dfr = pd.DataFrame(data)
 lc = st.write('Lớp chuyên')
 cola, colb, colc, cold, cole = st.columns(5)
 with cola:
