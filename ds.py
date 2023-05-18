@@ -94,8 +94,8 @@ with cola:
     else: dfv = pd.DataFrame({})
     
 with colb:
-#     ly = st.checkbox('Lý')
-#     hoa = st.checkbox('Hóa')
+    ly = st.checkbox('Lý')
+    hoa = st.checkbox('Hóa')
 #     if ly and hoa:
 #      dflh = dftv[dftv['CLASS-GROUP'].isin(['Chuyên Lý','Chuyên Hóa'])]
 #     elif ly:
