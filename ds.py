@@ -135,3 +135,4 @@ with cole:
    
 for i in dfto.index:
      dfr.loc[i] = list(dfto.loc[i])
+st.write(dfr)
